@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const users = [
+  {
+    id: 1,
+    name: "Ankit Jain",
+  },
+  {
+    id: 2,
+    name: "Shankar Sahu",
+  },
+  {
+    id: 3,
+    name: "Akash Kushwaha",
+  },
+];
+
+const orders = [
+  {
+    orderId: 101,
+    userId: 1,
+    productId: 123,
+    productName: "Apple iPhone 14 Pro Max",
+  },
+  {
+    orderId: 102,
+    userId: 1,
+    productId: 124,
+    productName: "Apple MacBook Pro",
+  },
+  {
+    orderId: 103,
+    userId: 1,
+    productId: 125,
+    productName: "Apple iWatch 7 series",
+  },
+  {
+    orderId: 104,
+    userId: 2,
+    productId: 126,
+    productName: "Samsung S22",
+  },
+];
+
+const final = [
+  {
+    userId: 1,
+    userName: "Ankit Jain",
+    orders: [
+      {
+        orderId: 101,
+        productId: 123,
+        productName: "Apple iPhone 14 Pro Max",
+      },
+      {
+        orderId: 102,
+        productId: 124,
+        productName: "Apple MacBook Pro",
+      },
+      {
+        orderId: 103,
+        productId: 125,
+        productName: "Apple iWatch 7 series",
+      },
+    ],
+  },
+  {
+    userId: 2,
+    userName: "Shankar Sahu",
+    orders: [
+      {
+        orderId: 104,
+        userId: 2,
+        productId: 126,
+        productName: "Samsung S22",
+      },
+    ],
+  },
+  {
+    userId: 3,
+    userName: "Akash Kushwaha",
+    orders: [],
+  },
+];
+// 1 approach
+//declare a empty arr and empty object
+//loop the users 
+//initialise the new objects containing merge of orders and users details
+//loop the orders
+//declare a empty object
+//check the condition
+//push the properties to empty object
+//push object to array,array to objects,objects to array
+//finally console the final array
+// let final_arr=[];
+// let final_order_objects={};
+// for(let item of users){
+//  final_order_objects={
+//         userId:item.id,
+//         userName:item.name,
+//         orders_array:[]
+//       };
+//    for(let element of orders){
+//        let order_object={}
+//      if(item.id===element.userId){
+//         order_object={
+//         orderId:element.orderId,
+//         productId:element.productId,
+//         productName:element.productName
+//       }
+//      final_order_objects.orders_array.push(order_object);
+//     }
+//   }
+  
+//   final_arr.push(final_order_objects)
+// }
+
+// console.log(final_arr)
+
+//2 second approach
+//declare a empty array 
+//loop the users 
+//initialise the new objects containing merge of orders and users details
+//loop the orders
+//check the condition
+//take the necessary details using rest operator
+//push the object to array
+//push array to objects
+//finally console the final array
+let final_arr=[];
+for(let items of users){
+  final_order_objects={
+        userId:items.id,
+        userName:items.name,
+        orders_array:[]
+      };
+  for(let element of orders){
+      if(items.id===element.userId){
+      const{userId,...remaining} = element;
+      final_order_objects.orders_array.push(remaining);
+      }
+    }
+    final_arr.push(final_order_objects);
+  }
+console.log(final_arr)
+</script>
+</html>
