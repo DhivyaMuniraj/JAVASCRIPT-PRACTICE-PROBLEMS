@@ -55,10 +55,63 @@
 
 
 //3 approach
+// function longestWord(input){
+// let result=input.split(" ").sort((a,b)=>a.length-b.length);
+// return result[result.length-1]
+// }
+// console.log(longestWord(input_string));
+
+
+//4 approach
+ // get the input
+ //create a function
+ //split the string
+ //declare empty object and initialize max to 0
+ //check if the current string is present in object if not add the length
+ //finally take the length and compare and return the max string
+//  function longestWord(input) {
+//     let splited_string= input.split(" ");
+//     let obj = {}
+//     let max = 0
+//     let word = ""
+//     for (let i of splited_string) {
+//         if (obj.hasOwnProperty(i)) {
+//             obj[i] = i.length;
+//         }
+//     }
+//     for (let i in obj) {
+//         if (obj[i] > max) {
+//             word = i;
+//         }
+//     }
+//     return(word);
+// }
+
+// console.log(longestWord(input_string));
+
+
+//
+// approach 5
+// get an input
+// create a function
+// split the String
+// store a first splited word in a variable
+// run the loop
+// compare length
+// if current length is greater than previous length store the word 
+// return the word
 function longestWord(input){
-let result=input.split(" ").sort((a,b)=>a.length-b.length);
-return result[result.length-1]
+    let splited_arr = str.split(" ");
+    let long_string = splited_arr[0];
+    for (let i of splited_arr){
+        if(i.length > temp.length){
+            long_string = i;
+        }
+    }
+    return(long_string);
 }
+
 console.log(longestWord(input_string));
+
 </script>
 </html>
