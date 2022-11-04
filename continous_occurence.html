@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //get an input
+    //split the string
+    //declare a empty string
+    //declare a count with 1 
+    //iterate the loop
+    //compare the first index and next index and goes on
+    //if condition fails just add the character and count to empty string and make count to 1
+    //finally print the string
+
+    let input_string="AAABBAA"
+    function continous_occurence(input){
+    let split_string=input.split("");
+    let result_string="";
+    let count=1;
+    for(let i=0;i<split_string.length;i++){
+        (split_string[i]===split_string[i+1])?count++:(result_string+=split_string[i]+count,count=1);
+    }
+        return(result_string);
+}
+console.log(continous_occurence(input_string));
+
+</script>
+</html>
