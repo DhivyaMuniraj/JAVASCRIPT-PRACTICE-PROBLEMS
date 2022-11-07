@@ -19,21 +19,21 @@
     //add the index and elements to object
     //return the object
 
-    let arr=[1,2,3,4,-1,3];
+    let input=[1,2,3,4,-1,3];
     function sum_of_zero_pair(input_arr){
     let result_obj={};
-    for(let i=0;i<arr.length;i++){
-        for(let j=0;j<arr.length;j++){
-            if(arr[i]+arr[j]==0){
-                result_obj[i]=arr[i]
-                result_obj[j]=arr[j]
+    for(let i=0;i<input_arr.length;i++){
+        for(let j=0;j<input_arr.length;j++){
+            if(input_arr[i]+input_arr[j]==0){
+                result_obj[i]=input_arr[i]
+                result_obj[j]=input_arr[j]
             }
         }
         break;
     }
     return result_obj;
 }
-console.log(sum_of_zero_pair(arr));
+console.log(sum_of_zero_pair(input));
 
 
 </script>
