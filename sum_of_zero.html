@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //get the input
+    //create a function
+    //declare a object
+    //run the 1st loop
+    //run the second loop
+    //check if sum is zero
+    //add the index and elements to object
+    //return the object
+
+    let arr=[1,2,3,4,-1,3];
+    function sum_of_zero_pair(input_arr){
+    let result_obj={};
+    for(let i=0;i<arr.length;i++){
+        for(let j=0;j<arr.length;j++){
+            if(arr[i]+arr[j]==0){
+                result_obj[i]=arr[i]
+                result_obj[j]=arr[j]
+            }
+        }
+        break;
+    }
+    return result_obj;
+}
+console.log(sum_of_zero_pair(arr));
+
+
+</script>
+</html>
