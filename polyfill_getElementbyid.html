@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="college_div" style="color:Green">COLLEGE
+     <div id="student_div" style="color:brown">Student
+      <div id="department_div" style="color:blueviolet">Department
+        <ul>
+          <li>EEE</li> 
+          <li>ECE</li>
+          <li>CSE</li>
+          <li>BME</li>
+        </ul>
+        </div>
+     </div>
+    </div>
+   <div id="display_res"></div>
+</body>
+</html>
+<!-- //get an input
+//create a function
+//store the document body in array
+//declare an empty variable
+//create other one recursion function
+//pass the array
+//then take first element check with the id if present store the result break or else check for the children
+//if children present again call the recursion function 
+//finally return the varaible which has resulted element
+-->
+   <script>
+   function polyfill_get_ElementById(id){
+  let element_array = [document.body];
+  let result_value;
+  
+  polyfill_get_ElementById_recursion(element_array);
+  function polyfill_get_ElementById_recursion(element_array){
+   for(let i=0;i<element_array.length;i++)
+   {
+     if(element_array[i].id===id){
+          result_value=element_array[i];
+          break;
+      }
+      else{
+        element_array=element_array[i].children
+        polyfill_get_ElementById_recursion(element_array);
+      }
+    }
+   
+  }
+  return (result_value==null)?"The Given Id is not present":result_value;
+  }
+console.log(polyfill_get_ElementById("college_div"));
+</script>
